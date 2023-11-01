@@ -4,5 +4,6 @@
    This script would check Email authenication records viz SPF, DKIM and DMARC are set for your email domain. These records are essential for preventing email spoof and ensuring better email deliverability.
 2. 102_Website_Monitoring
 3. 103_DNS_record_check
+   This powershell script would check the DNS records for each domain in the hostlist and update output in a text.
 4. 104_Email_deliverability_check
 5. 110_PPT_creation

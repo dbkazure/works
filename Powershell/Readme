@@ -1,6 +1,7 @@
 # Useful Powershell scripts
 
 1. 101_Email_Authentication_check
+   This script would check Email authenication records viz SPF, DKIM and DMARC are set for your email domain. These records are essential for preventing email spoof and ensuring better email deliverability.
 2. 102_Website_Monitoring
 3. 103_DNS_record_check
 4. 104_Email_deliverability_check

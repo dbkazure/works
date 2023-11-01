@@ -1,4 +1,4 @@
-﻿# This powershell script will check the DNS records for each domain in the hostlist and update output in a text.
+﻿# This powershell script would check the DNS records for each domain in the hostlist and update output in a text.
 # Please remember to update the paths for below variables.
 $hostlist = "D:\scripts\dnsrecordcheck\domains.txt"
 $outfile = "D:\scripts\DNSresults.txt"

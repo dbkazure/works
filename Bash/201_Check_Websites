@@ -1,0 +1,33 @@
+#!/bin/bash
+#set -x
+# This script will check essential details of websites.
+#   1.Check if the website is up.
+#   2.Check the page load time.
+#   3.Check the SSL expiry date.
+
+# Update the list of websites you want to check in the below array, use https:// and leave space after each
+websites=("https://www.test.com" "https://example.com" "https://www.example1.com" "https://www.example2.com")
+for site in "${websites[@]}"; do
+    echo "-----------------------------------"
+    echo -e "\t $site"
+    echo "-----------------------------------"
+    # Check in site returns status 200
+    curl --connect-timeout 5 -isSL "$site" 2> /dev/null | grep "200" > /dev/null
+    if [ $? -eq 0 ];then
+    echo "Website $site is up!"
+    else
+    echo "Website $site is down!"
+    echo -e "====================================\n"
+    #Skip to next site if Site is down
+    continue
+  fi
+  #Find the SSL expiry date using openssl
+  server=$(echo $site | sed -E 's_^https?://__')
+  SSLexpirydate=$(echo -n Q | openssl s_client -servername google.com -connect $server:443 2>/dev/null|openssl x509 -noout -dates |grep "notAfter" |cut -d'=' -f2)
+  echo "SSL expiry date : $SSLexpirydate"
+  
+  #Find the Page load time to in second to seconds
+  PageLoadTime=$(curl -o /dev/null -s -w "%{time_total}\n" $site)
+  echo "Page Load time= $PageLoadTime seconds"
+  echo -e "====================================\n"
+done

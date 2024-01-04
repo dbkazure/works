@@ -1,0 +1,34 @@
+---
+# This will freeze the Operating System to specific version. Freeze to a release on Redhat Family OS distributions.
+
+ - name: Set releasever on CentOS
+   become: yes
+   when:
+    - ansible_facts['distribution'] == "CentOS"
+    - ansible_facts['distribution_version'] == "7.2"
+   lineinfile:
+    path: /etc/yum/vars/releasever
+    line: '7.2'
+    create: yes
+
+
+ - name: Set releasever on CentOS
+   become: yes
+   when:
+    - ansible_facts['distribution'] == "Redhat"
+    - ansible_facts['distribution_version'] == "8.2"
+   lineinfile:
+    path: /etc/yum/vars/releasever
+    line: '8.2'
+    create: yes
+
+
+ - name: Set releasever on AlmaLinux
+   become: yes
+   when:
+    - ansible_facts['distribution'] == "AlmaLinux"
+    - ansible_facts['distribution_version'] == "8.7"
+   lineinfile:
+    path: /etc/yum/vars/releasever
+    line: '8.7'
+    create: yes

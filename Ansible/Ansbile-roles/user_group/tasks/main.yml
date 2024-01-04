@@ -1,0 +1,39 @@
+---
+# Tasks is to ensure user present on server with specific group access.
+- name: Ensure the required group exists
+  become: yes
+  ansible.builtin.group:
+    name: "{{ item.name }}"
+    state: present
+    gid: "{{ item.gid }}"
+  with_items:
+    - { name: dba, gid: 2001 }
+    - { name: apps, gid: 2011 }
+    - { name: developers, gid: 2021 }
+    
+- name: Create dbaadmin and dba group
+  become: yes
+  ansible.builtin.user:
+    name: dbaadmin
+    comment: Generic Admin local dba
+    uid: 2001
+    group: dba
+  
+- name: Automation user with nologin
+  become: yes
+  ansible.builtin.user:
+    name: automationusr
+    shell: /sbin/nologin
+    groups: apps,developers
+    append: yes
+
+- name: root with nologin
+  become: yes
+  ansible.builtin.user:
+    name: root
+    shell: /sbin/nologin
+
+
+
+
+

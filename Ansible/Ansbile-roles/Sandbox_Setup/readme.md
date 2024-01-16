@@ -6,7 +6,9 @@ VM setup has yet to be added, which is currently in the development stage.
 To run the playbook or role,.
 
 ansible-playbook sandbox_setup.yml --tags Docker -K
+
 ansible-playbook sandbox_setup.yml --tags Chroot -K
+
 ansible-playbook sandbox_setup.yml --tags VM -K
 
 Note: Please make sure to update the hosts entry with the destination machine hostname or IP.

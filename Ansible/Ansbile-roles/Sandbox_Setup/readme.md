@@ -3,7 +3,7 @@
 This Ansible role will setup Chroot and Docker Image in Ubuntu, which can essentially be used as a Sandbox for testing.
 VM setup has yet to be added, which is currently in the development stage.
 
-To run the playbook or role,.
+To run the playbook or role:
 
 ansible-playbook sandbox_setup.yml --tags Docker -K
 

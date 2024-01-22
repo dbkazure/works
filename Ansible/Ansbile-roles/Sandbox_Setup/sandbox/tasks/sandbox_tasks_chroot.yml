@@ -1,0 +1,18 @@
+---
+- name: Install jailkit tool to generate Jail environment
+  become: true
+  ansible.builtin.apt:
+    name: jailkit
+    state: latest
+    update_cache: true
+    
+- name: Initiate jail environment on /home/jail directory
+  ansible.builtin.shell: sudo jk_init -v -j /home/jail basicshell scp jk_lsh
+
+- name: Place the user in jail environment
+  ansible.builtin.user:
+    name: testuser2
+    comment: User for chroot sandbox environment
+
+- ansible.builtin.shell: sudo jk_jailuser -m -j /home/jail testuser2 && sudo usermod -s /bin/bash testuser2
+  

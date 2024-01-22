@@ -1,0 +1,16 @@
+---
+- name:
+  hosts: all
+  pre_tasks:
+  - name: Important Note!
+    ansible.builtin.debug:
+      msg: "Disclaimer:The purpose I have created this for upskilling myself on Ansible automation. Kindly use it with caution if you plan to test it in your environment. Thanks!"
+    tags: [Chroot, Docker, VM]
+
+- name:  Create a Sandbox environment for test
+  gather_facts: True
+  remote_user: ansible
+  become: yes
+  hosts: all
+  roles:
+   - role: sandbox

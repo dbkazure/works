@@ -1,0 +1,13 @@
+---
+- name: Setup Chroot environment
+  ansible.builtin.import_tasks: sandbox_tasks_chroot.yml
+  tags: Chroot
+
+- name: Setup Docker environment
+  ansible.builtin.import_tasks: sandbox_tasks_docker.yml
+  tags: Docker
+
+
+- name: Setup VM environment
+  ansible.builtin.import_tasks: sandbox_tasks_vm.yml
+  tags: VM

@@ -1,0 +1,4 @@
+---
+- name: VM environment
+  ansible.builtin.debug:
+    msg: "Under development"

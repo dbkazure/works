@@ -1,5 +1,0 @@
----
-#- name: Creating Users and Groups, and add users to groups.
-- hosts: all
-  roles:
-   - freeze_ver

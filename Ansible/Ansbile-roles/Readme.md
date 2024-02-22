@@ -1,7 +1,7 @@
 Ansible Roles
 --
 
-Contents: This contains to Ansible roles to automate certain Linux Administration tasks. I will be updating more roles to this repository so please do keep watching it.
+Contents: This contains Ansible roles to automate certain Linux Administration tasks. I will be updating more roles to this repository so please do keep watching it.
 
 List of Roles:\
 #Role1 : Creating Users and Groups, and users to groups.\
@@ -22,7 +22,7 @@ List of Roles:\
 ----------------------------------------------
 Freezing Operating System to a particular release.
 ----------------------------------------------
- Use Case: 	Some applications requires the Operating System to be permanently on a particular version.\
+ Use Case: 	Some applications requires the Operating System need to be permanently on a particular version.\
  Playbook: 	~/playbooks/adhoc-tasks/freeze_version.yml\
  Role:		~/roles/freeze_version\
  
@@ -56,9 +56,9 @@ Checking for the files with SETUID, SETGID and STICKYBIT set
 ----------------------------------------------
 HOW TO RUN:
 --
-To run the playbook which will initiate the respective role.
+Run the playbook which will initiate the respective role.\
 $ ansible-playbook -i inventory/hosts playbooks/<playbook>.yml -K\
-Eg: To run User_group role(Role#1 in the list)\
+Eg: To run Service_check role(Role#1 in the list)\
 $ansible-playbook -i inventory/hosts playbooks/adhoc-tasks/service_check.yml -K
 
 

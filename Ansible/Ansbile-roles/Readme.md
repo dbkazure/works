@@ -58,7 +58,8 @@ HOW TO RUN:
 --
 Run the playbook which will initiate the respective role.\
 $ ansible-playbook -i inventory/hosts playbooks/<playbook>.yml -K\
-Eg: To run Service_check role(Role#1 in the list)\
+
+Eg: To run Service_check role(Role#5 in the list)\
 $ansible-playbook -i inventory/hosts playbooks/adhoc-tasks/service_check.yml -K
 
 

@@ -1,0 +1,9 @@
+---
+- name: Creating Users and Groups, and add users to groups.
+  hosts: all
+  gather_facts: True
+  remote_user: ansible
+  become_user: root
+  become: yes
+  roles:
+    - user_group

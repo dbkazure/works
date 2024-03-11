@@ -1,0 +1,9 @@
+---
+- name:  Apply security patch on Servers
+  gather_facts: True
+  remote_user: ansible
+  become_user: root
+  become: yes
+  hosts: all
+  roles:
+   -  quick_patch

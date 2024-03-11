@@ -1,0 +1,10 @@
+---
+- name: Checking for the files with SETUID, SETGID and STICKYBIT set
+  hosts: all
+  gather_facts: True
+  remote_user: ansible
+  become_user: root
+  become: yes
+  roles:
+   - S_UID_GID_SBIT
+

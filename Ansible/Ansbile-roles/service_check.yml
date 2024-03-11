@@ -1,0 +1,8 @@
+- name: Check Stats/sar for Servers
+  hosts: all
+  gather_facts: True
+  remote_user: ansible
+  become_user: root
+  become: yes
+  roles:
+    - srv_check

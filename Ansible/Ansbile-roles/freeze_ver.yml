@@ -1,0 +1,8 @@
+---
+- name: Freezing Operating System to a particular release
+  hosts: all
+  gather_facts: True
+  become_user: root
+  become: yes
+  roles:
+   - ver_freeze

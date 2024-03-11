@@ -13,55 +13,66 @@ List of Roles:\
 ----------------------------------------------
  Creating Users and Groups, and users to groups.
 ----------------------------------------------
- Use Case: 	Any environment you will need to have list of default users in all systems.\
- Playbook: 	~/playbooks/adhoc-tasks/user_group.yml\
- Role:		~/roles/user_group
+Use Case: 	Any environment you will need to have list of default users in all systems.\
+Playbook: 	~/Ansible-roles/user_group.yml\
+Role:		~/Ansible-roles/user_group
 
- How to run this role: $ansible-playbook -i ~/playbooks/adhoc-tasks/user_group.yml -K\
+How to run this role: $ansible-playbook -i ~/Ansible-roles/user_group.yml -K\
  
  ----------------------------------------------
 
 ----------------------------------------------
 Freezing Operating System to a particular release.
 ----------------------------------------------
- Use Case: 	Some applications requires the Operating System need to be permanently on a particular version.\
- Playbook: 	~/playbooks/adhoc-tasks/freeze_version.yml\
- Role:		~/roles/freeze_version\
+Use Case: 	Some applications requires the Operating System need to be permanently on a particular version.\
+Playbook: 	~/Ansible-roles/freeze_version.yml\
+Role:		~/Ansible-roles/freeze_version\
 
- How to run this role: $ansible-playbook -i ~/playbooks/adhoc-tasks/freeze_version.yml -K\
+How to run this role: $ansible-playbook -i ~/Ansible-roles/freeze_version.yml -K\
  
 ----------------------------------------------
 
 ----------------------------------------------
 Checking for the files with SETUID, SETGID and STICKYBIT set
 ----------------------------------------------
- Use Case: 	SETUID, SETGID and STICKYBIT can be an expolit if set wrongly or by mistake, so it should be verified.\
- Playbook: 	~/playbooks/adhoc-tasks/SUID_SGID_SBIT_check.yml\
- Role:		~/roles/SUID_SGID_SBIT_check
+Use Case: 	SETUID, SETGID and STICKYBIT can be an expolit if set wrongly or by mistake, so it should be verified.\
+Playbook: 	~/Ansible-roles/SUID_SGID_SBIT_check.yml\
+Role:		~/Ansible-roles/SUID_SGID_SBIT_check
 
-How to run this role: $ansible-playbook -i ~/playbooks/adhoc-tasks/SUID_SGID_SBIT_check.yml -K\
+How to run this role: $ansible-playbook -i ~/Ansible-roles/SUID_SGID_SBIT_check.yml -K\
  
 ----------------------------------------------
 
 ----------------------------------------------
  Apply security patch on Servers
 ----------------------------------------------
- Use Case: 	Push a quick patch, especially a zero day vulnerability package.\
- Playbook: 	~/playbooks/adhoc-tasks/quick_patch.yml\
- Role:		~/roles/quick_patch
+Use Case: 	Push a quick patch, especially a zero day vulnerability package.\
+Playbook: 	~/Ansible-roless/quick_patch.yml\
+Role:		~/Ansible-roles/quick_patch
 
-How to run this role: $ansible-playbook -i ~/playbooks/adhoc-tasks/quick_patch.yml -K\
+How to run this role: $ansible-playbook -i ~/Ansible-roless/quick_patch.yml -K\
  
 ----------------------------------------------
 
 ----------------------------------------------
  Ensure a list of services are running
 ----------------------------------------------
- Use Case: 	Ensure Critical services are running.\
- Playbook: 	~/playbooks/adhoc-tasks/service_check.yml\
- Role:		~/roles/service_check
+Use Case: 	Ensure Critical services are running.\
+Playbook: 	~/Ansible-roles/service_check.yml\
+Role:		~/Ansible-roles/service_check
  
-How to run this role: $ansible-playbook -i ~/playbooks/adhoc-tasks/service_check.yml -K\
+How to run this role: $ansible-playbook -i ~/Ansible-roles/service_check.yml -K\
+
+----------------------------------------------
+SandboxSetup
+----------------------------------------------
+Use Case: Sandbox environments are typically useful to test a suspicious code.\
+Playbook: 	~/Ansible-roles/Sandbox_Setup/sandbox/sandbox_setup.yml\
+Role:		~/Ansible-roles/Sandbox_Setup/sandbox/
+ 
+How to run this role: $ansible-playbook -i ~/Ansible-roles/Sandbox_Setup/sandbox/sandbox_setup.yml -K\
+
+----------------------------------------------
  
 ----------------------------------------------
 HOW TO RUN a role:

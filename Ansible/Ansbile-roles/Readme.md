@@ -16,8 +16,10 @@ List of Roles:\
  Use Case: 	Any environment you will need to have list of default users in all systems.\
  Playbook: 	~/playbooks/adhoc-tasks/user_group.yml\
  Role:		~/roles/user_group
+
+ How to run this role: $ansible-playbook -i ~/playbooks/adhoc-tasks/user_group.yml -K\
  
-----------------------------------------------
+ ----------------------------------------------
 
 ----------------------------------------------
 Freezing Operating System to a particular release.
@@ -25,6 +27,8 @@ Freezing Operating System to a particular release.
  Use Case: 	Some applications requires the Operating System need to be permanently on a particular version.\
  Playbook: 	~/playbooks/adhoc-tasks/freeze_version.yml\
  Role:		~/roles/freeze_version\
+
+ How to run this role: $ansible-playbook -i ~/playbooks/adhoc-tasks/freeze_version.yml -K\
  
 ----------------------------------------------
 
@@ -34,6 +38,8 @@ Checking for the files with SETUID, SETGID and STICKYBIT set
  Use Case: 	SETUID, SETGID and STICKYBIT can be an expolit if set wrongly or by mistake, so it should be verified.\
  Playbook: 	~/playbooks/adhoc-tasks/SUID_SGID_SBIT_check.yml\
  Role:		~/roles/SUID_SGID_SBIT_check
+
+How to run this role: $ansible-playbook -i ~/playbooks/adhoc-tasks/SUID_SGID_SBIT_check.yml -K\
  
 ----------------------------------------------
 
@@ -43,6 +49,8 @@ Checking for the files with SETUID, SETGID and STICKYBIT set
  Use Case: 	Push a quick patch, especially a zero day vulnerability package.\
  Playbook: 	~/playbooks/adhoc-tasks/quick_patch.yml\
  Role:		~/roles/quick_patch
+
+How to run this role: $ansible-playbook -i ~/playbooks/adhoc-tasks/quick_patch.yml -K\
  
 ----------------------------------------------
 
@@ -53,13 +61,15 @@ Checking for the files with SETUID, SETGID and STICKYBIT set
  Playbook: 	~/playbooks/adhoc-tasks/service_check.yml\
  Role:		~/roles/service_check
  
+How to run this role: $ansible-playbook -i ~/playbooks/adhoc-tasks/service_check.yml -K\
+ 
 ----------------------------------------------
-HOW TO RUN:
+HOW TO RUN a role:
 --
 Run the playbook which will initiate the respective role.\
 $ ansible-playbook -i inventory/hosts playbooks/<playbook>.yml -K
 
-Eg: To run Service_check role(Role#5 in the list)\
+Eg: To run Service_check role(Role#5 in the list) the respective playbook to intiate is service_check.yml\
 $ansible-playbook -i inventory/hosts playbooks/adhoc-tasks/service_check.yml -K
 
 

@@ -1,0 +1,17 @@
+---
+- name: Apply quick security Patch
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Apply CVE Patch on Red Hat/CentOS
+      when: "ansible_distribution == 'RedHat'"
+      yum:
+        name: your_redhat_cve_package
+        state: latest
+
+    - name: Apply CVE Patch on Ubuntu
+      when: "ansible_distribution == 'Ubuntu'"
+      apt:
+        name: your_ubuntu_cve_package
+        state: latest

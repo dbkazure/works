@@ -1,0 +1,5 @@
+---
+# vars file for check_stats
+
+dump_dir: /tmp/
+command: sar -A

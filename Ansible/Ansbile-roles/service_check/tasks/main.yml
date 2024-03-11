@@ -1,0 +1,18 @@
+---
+- name: Ensure Services are Running
+  hosts: all
+  become: yes
+
+  vars:
+    services_to_ensure:
+      - nfsd
+      - httpd
+      - ntpd
+
+  tasks:
+    - name: Ensure services are running
+      service:
+        name: "{{ item }}"
+        state: started
+        enabled: yes
+      loop: "{{ services_to_ensure }}"

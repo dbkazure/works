@@ -5,4 +5,4 @@
   become_user: root
   become: yes
   roles:
-    - srv_check
+    - service_check

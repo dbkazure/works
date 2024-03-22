@@ -1,6 +1,8 @@
 #!/bin/bash
-# This script will create a remote user and configure passwordless for it.
-# By running this as Ansible admin user, you can configure the remote machine as Ansible client.
+# This script will create a remote user and configure passwordless access using ssh keys.
+# Password-less user access on a remote server allows Ansible to seemlessly connect and execute commands/tasks on remote machine.
+# This script would add the user to the sudo group (i.e., sudo for Debian based and wheel for Redhat based) for elevated permission.
+# If you have a specific admin group, please set it on 'sudogroup' variable. 
 # After running the script, all you have to do for the Ansible client configuration is add the remote machine IP/hostname to the Ansible inventory.
 
 read -p "Enter a username:" username
